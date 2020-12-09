@@ -1,0 +1,43 @@
+Sketch:
+
+1. channel is defined by ID
+2. Channel consists of his own ID, sub channel ID, and hardwares.
+3. They should be store in the form of dict.
+
+d = { channel  }
+
+machine read sensor 
+
+python read file name 
+
+# ---------------------------------------
+
+create file
+del file
+
+read a lineitem from config file.
+read all lineitems from config file.
+append lineitem into config file.
+remove lineitem from config file.
+update lineitem from config file.
+
+
+option 1:
+1. every channel item is called from schedule datetime.
+2. the process of a single channel may overlap the schedule datetime of other
+channel item.
+3. Spin out parent and child process.
+
+option 2:
+1. the config schedule is run by fixed time.
+2. it consists loop bellow :
+    - loop for the timer to start read config schedule
+        - loop to read the schedule config items.
+            - loop to run the proces.
+
+option 3:
+1. the config file schedule is run by fixed time.
+2. the 
+
+
+

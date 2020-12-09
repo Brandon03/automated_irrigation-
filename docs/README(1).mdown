@@ -1,0 +1,9 @@
+##README
+
+### Introduction
+By modifying the config file, the main.py should able add or modify settings into database and scheduler. According to the scheduler, The machine would be called by cron from crontab. Next, it will call the database and start extracting data from the sensors, then according to the condition set, it will decide what hardware and how long will it need to be active. Lastly, all the activity will be recorded into the Log database.
+
+### versions:
+
+----
+<!-- Markdeep:--> <style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><link rel="stylesheet" href="assets/s/lopash.css"></link><script src="assets/j/markdeep_2.1.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||‰®(document.body.style.visibility="visible")</script>

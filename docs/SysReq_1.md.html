@@ -1,0 +1,93 @@
+# System Requirements for IrriCon
+
+## Objectives
+
+  - Create a system (HW & SW) that irrigates plants in a garden that can later be scal up to be use on a farm. The detailed features are outlined below.
+
+## Functionality
+
+##@ 1. Multiple Watering Modes of Irrigation:
+
+  - It must be able to have at l;east 2 modes of Irrigation
+
+  - __Mist Irrigation__
+
+    - Use a _high-pressure_ pump and nozzles to create a fine spray to water plants - 
+
+  - __Drip Irrigation__
+
+    - Use a _pump_ and pipes/hose to feed water directly into the soil to the plant roots, using multiple _Channels_
+
+  - for both modes the _duration_ and the _schedule_ of the watering should be _user-definable_.
+
+### 2. Multi-channel capable
+
+  - a __Channel__ is defimed as a _Pump & Pipe_ combination used to deliver a _watering Mode_ to a particular collection of plants.
+
+  - The System has the capability to manage and drive one or more _Channels_.
+
+  - Each _Channel_ can be set to any one _Watering Mode_
+
+### 3. schedule & Duration
+
+  - For each _Channel_ , irregardless of _watering Mode_, the Duration and Schedule for watering can be set.
+
+  - _Duration_ is defined the length of time for the watering, defined in seconds. 
+    - Based on the volume of the pump, the _duration_ can also be calculated as the volume (liters) of water to be delivered for each watwerig session, calculated as follows:
+
+        volume = _Duration_ X pump's flow rate
+
+
+  - _Schedule_ is defined as the time of day for a watering _Duration_.
+
+
+### 4. Feedback and Watering Mode:
+
+  - Watering Mode may either be configured via a _schedule_ as defined above, or it may be activated by feedback from a _Soil Moisture_ sensor.
+
+### 5. Dashboard and Control Interface
+
+  - The System shall provide a Web-interface to enable the User to:
+
+    - view the various System parameters:
+
+      - The number of Operating Channels
+      - The water Mode of each Channel
+      - Watering Duration of each Watering Mode
+      - Schedule of watering for each Channel
+
+    - View Statistics
+
+      - Amount of water delivered/Channel
+      - Amount of fertilizer delivered (mixed with water)/Channel
+      - Monitor Soil moisture
+
+    - View Work Status
+
+      - Which Channels have already completed
+      - Which Channels are yet to start
+
+    - Failure reporting
+      - When pumps fail
+      - when pipes are stuck
+      - when moisture sensors are not working
+
+
+### 6. Scalability
+
+  - The System must be able to control at least 5 Channels
+
+  - More Channels can be added to the System
+    
+    - Spceify what HW needs to be added, including pumps etc..
+    - There should be minimal addtional SW work, hence the API
+
+### 6. API (Application Programming Interface)
+
+  - The System shall have an API to allow other sub-systems to be integrated into the system. This could be either in the:
+
+    - Hardware and Functionality; e.g.
+
+----
+<!-- Markdeep:--> <style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><link rel="stylesheet" href="assets/s/lopash.css"></link><script src="assets/j/markdeep_2.1.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||‰®(document.body.style.visibility="visible")</script>
+
