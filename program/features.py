@@ -53,7 +53,7 @@ async def irricon(hw_port,
         """
         d = {
         "channel_address": channel_address,
-        "datetimes": datetime.now().strftime("%Y-%m-%d %H:%m"),
+        "datetimes": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "readings": value
         }
         print(d)

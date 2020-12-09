@@ -14,7 +14,7 @@ class Led():
     This class handle LED lighting as indication
 
     @args:
-	- channel: int, port number
+    - channel: int, port number
 
     @returns:
     """
@@ -27,14 +27,15 @@ class Led():
         return GPIO.output(self.cha, GPIO.HIGH)
 
     def off(self):
-        return GPIO.output(self.cha, GPIO.LOW)
+        GPIO.output(self.cha, GPIO.LOW)
+        return GPIO.cleanup()
 
 class SoilMoist():
     """
     This class handle soil moisture sensors.
 
     @args:
-	    - channel: int, port number from MCP3008
+        - channel: int, port number from MCP3008
 
     @returns:
     """
@@ -44,14 +45,14 @@ class SoilMoist():
         self.spi = spidev.SpiDev() # Created an object
         self.spi.open(0,0)
         
-	# Read MCP3008 data
+    # Read MCP3008 data
     def read(self):
         """
         This function does:
             - Connect and collect NUM READINGS sequentially from multiple soil moist sensors.
 
-	    @args:
-	       - self.cha, port number.
+        @args:
+           - self.cha, port number.
 
         @returns:
             - it returns [{ soil_moist port, timestamp, magnitude, error }]
@@ -74,7 +75,7 @@ class SoilMoist():
             l.append(output)
         value = mean(l)
         timestamp = datetime.today().strftime("%Y-%m-%d %H:%M")
-	#d = {"port": port, "timestamp": timestamp, "value": value}
+    #d = {"port": port, "timestamp": timestamp, "value": value}
         d = {"Sensor":self.cha, "datetimes":timestamp, "readings":value}
         #print(d)
 

@@ -2,13 +2,16 @@
 This is to test main.py
 """
 import sys
+import os
+import schedule
+import time
 
 import SetPath
 
 p = SetPath.WhichPath("program")
 sys.path.insert(0, p)
 
-import main
+import run
 import config
 
 # --READ CONFIG DATA ----------------------------------------------
@@ -25,7 +28,12 @@ def test_start():
     pass
 
 def test_run():
-    main.run(config_file=config_file)
+    run.run(config_file=config_file)
 
 if __name__ == "__main__":
-    test_run()
+    schedule.every(2).minutes.do(test_run)
+    
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+        

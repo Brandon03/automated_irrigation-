@@ -9,6 +9,10 @@ import features
 import db
 import pdb
 
+import os
+import schedule
+
+from pprint import pprint
 
 # --READ CONFIG DATA ----------------------------------------------
 config_file = "test_config.yaml" # return config directory path
@@ -43,7 +47,7 @@ def run(config_file=config_file):
                     if d_in == d_out:
                         l_col.append((r, _r))
 
-    print(l_col)
+    pprint(l_col)
 
     asyncio.run(features.automated_SoilSensor(l_col, config_file))
 

@@ -14,17 +14,17 @@ sys.path.insert(0, p)
 import HWcaller
 
 def test_ReadSoilMoisture():
-	""" This is to test ReadSoilMoisture() function """
-	sm = HWcaller.SoilMoist(7)
-	return sm.read()
+    """ This is to test ReadSoilMoisture() function """
+    sm = HWcaller.SoilMoist(7)
+    return sm.read()
 
 def test_led():
-	""" None """
-	led = HWcaller.Led(20)
-	led.on()
-	time.sleep(2)
-	led.off()
+    """ None """
+    led = HWcaller.Led(21)
+    led.on()
+    time.sleep(2)
+    led.off()
 
 if __name__ == "__main__":
-	test_ReadSoilMoisture()
-	#test_led()
+    print(test_ReadSoilMoisture())
+    #test_led()

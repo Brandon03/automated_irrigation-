@@ -1,25 +1,25 @@
 authentication:
   password: abc123
-  user: pi
+  user: brandon
 db:
   name: ../test/test_db.db
   table:
-  - fields: 'id INTEGER PRIMARY KEY AUTOINCREMENT, channel_address TEXT NOT NULL, datetimes TEXT NOT
-      NULL, readings FLOAT NOT NULL '
+  - fields: 'id int PRIMARY KEY, channel_address text NOT NULL, datetimes text NOT
+      NULL, readings float NOT NULL '
     name: HW_reading
 hardware:
   input:
-  - callibrate_condition: 30
+  - callibrate_condition: 50
     channel_address: p1/n1/p1
     hardware: moist sensor
     id: 4
-    port: 0
+    port: 17
     type: sensor
-  - callibrate_condition: 40
+  - callibrate_condition: 60
     channel_address: p1/n2/p1
     hardware: moist sensor
     id: 5
-    port: 7
+    port: 15
     type: sensor
   output:
   - channel_address: p1
@@ -30,17 +30,17 @@ hardware:
   - channel_address: p1/n1/p1
     hardware: valve
     id: 2
-    port: 21
+    port: 20
     type: nozzle
   - channel_address: p1/n2/p1
     hardware: valve
     id: 3
-    port: 20
+    port: 21
     type: drip
 schedule:
   day: '*'
-  hour: '*'
-  minute: '*/2'
+  hour: 0800, 1800
+  minute: '*'
   month: '*'
   week: '*'
   year: '*'
